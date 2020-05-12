@@ -30,6 +30,8 @@ class PotluckTest < Minitest::Test
   end
 
   def test_it_can_determine_number_of_dishes
+    @potluck.add_dish(@couscous_salad)
+    @potluck.add_dish(@cocktail_meatballs)
     assert_equal 2, @potluck.dishes.length
   end
 end
