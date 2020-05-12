@@ -59,6 +59,6 @@ class PotluckTest < Minitest::Test
     assert_equal @couscous_salad, @potluck.get_all_from_category(:appetizer).first
     assert_equal @summer_pizza, @potluck.get_all_from_category(:appetizer)[1]
     assert_equal "Couscous Salad", @potluck.get_all_from_category(:appetizer).first.name
-    assert_equal "Summer Pizza", potluck.get_all_from_category(:appetizer)[2].name
+    assert_equal "Summer Pizza", @potluck.get_all_from_category(:appetizer)[1].name
   end
 end
