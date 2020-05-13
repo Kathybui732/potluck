@@ -15,4 +15,18 @@ class Potluck
       dish.category == category
     end
   end
+
+  def menu
+    menu_dishes = Hash.new {|hash, key| hash[key] = []}
+    @dishes.each do |dish|
+      menu_dishes[dish.category] << dish.name
+    end
+    menu_dishes.each do |category, dish|
+      menu_dishes[category] = dish.sort_by { |name| name }
+    end
+  end
+
+  def ratio(category)
+    (get_all_from_category(category).size/@dishes.size.to_f * 100).round(1)
+  end
 end
